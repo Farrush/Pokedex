@@ -7,7 +7,6 @@
 }
 
 .pokemon-card .card-top{
-
     padding:30px 40px 0px;
 }
 .pokemon-card .name{
@@ -18,7 +17,8 @@
     font-size: 12px;
 
     opacity: 0.8;
-    border-radius: 7px;
+    background-color: #FEFEFE;
+    border-radius: 10px;
     padding:2px 10px;
     box-shadow:0px 6px 21px -7px rgba(0,0,0,0.9);
 }
@@ -74,4 +74,23 @@
 
 .pokemon-card.open {
     display:block;
+}
+
+.eletric-type{
+    background-color: #ecd360;
+}
+.water-type{
+    background-color: #5FA5E2 ;
+}
+.grass-type{
+    background-color: #399541;
+}
+.fire-type{
+    background-color: #E26846;
+}
+.ghost-type{
+    background-color: #662F78;
+}
+.dragon-type{
+    background-color: #551ea7;
 }
