@@ -8,6 +8,6 @@ hp int,
 atq int,
 def int,
 vel int,
-img blob,
-icon blob
+img char,
+icon char
 );

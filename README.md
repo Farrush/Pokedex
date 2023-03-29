@@ -1,35 +1,20 @@
-# vue-dex
+### Pokedex Web
+Decidi refazer este projeto antigo (https://github.com/Farrush/PokedexJs) usando VueJs e banco de dados 
+sqlite3 que é acessado por meio de uma api feita com Node e Express.
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+# Comando para rodar o projeto
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
+porta: 8080
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
+# Comando para rodar a api 
 ```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+npm run server
 ```
+porta:3000
+
+<br/>
+<img src="./print.png"/>
+
+

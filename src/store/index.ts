@@ -2,49 +2,58 @@ import type { InjectionKey } from "vue";
 import { createStore, Store, useStore as vuexUseStore } from "vuex";
 import type IPokemon from '../interfaces/IPokemon'
 import type IListaPoke from '../interfaces/IListaPoke'
+import http from '../http/http'
 export interface Estado {
     pokemon: IPokemon,
     lista: IListaPoke[]
-} 
+}
 export const key: InjectionKey<Store<Estado>> = Symbol()
 export const store = createStore<Estado>({
     state: {
-        pokemon:{
-            codigo: "171",
-            nome: "monpoke",
-            tipo: "bolo",
-            habilidade1: "soco",
-            habilidade2: "chute",
+        pokemon: {
+            codigo: "x",
+            nome: "x",
+            tipo: "x",
+            habilidade1: "x",
+            habilidade2: "x",
             hp: 2,
             atq: 3,
             def: 5,
             vel: 1,
             img: ""
         },
-        lista:[
+        lista: [
             {
-            codigo: "0025",
-            nome: "pikachu",
-            icon: "naodda"
-            },
-            {
-                codigo: "0095",
-                nome: "gengar",
-                icon: "naosdadda"
+                codigo: "",
+                nome: "",
+                icon: ""
             }
         ]
     },
     mutations: {
+        ["CARREGA_LISTA"](store, lista: IListaPoke[]) {
+            store.lista = lista
+        },
+        ["CARREGA_POKEMON"](store, poke: IPokemon){
+            store.pokemon = poke
+        }
 
     },
     actions: {
-        //criar uma action que
-        //faz um select codigo, icon from pokemons
-        //salva cada um na store em "lista"
+
+        ["RECEBE_LISTA"]({ commit }) {
+
+            http.get('nav-list')
+                .then(response => commit("CARREGA_LISTA", response.data))
+
+        },
+        ["RECEBE_POKEMON"]({ commit }, cod){
+            http.get('pokemon/'+cod)
+                .then(response => commit("CARREGA_POKEMON", response.data))
+        }
     }
 
-  })
-
+})
 export function useStore(): Store<Estado> {
     return vuexUseStore(key)
 }
