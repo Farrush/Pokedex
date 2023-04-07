@@ -1,4 +1,25 @@
 .list{
-    width:200px;
+    width:250px;
+    max-height: 720px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-left: 10px;
 }
+.list::-webkit-scrollbar {
+    width: 10px;
+
+  }
+  
+  .list::-webkit-scrollbar-track {
+    background: #0000;
+  }
+  
+  .list::-webkit-scrollbar-thumb {
+    background: #ec256e87;
+    border-radius: 5px;
+  }
+  
+  .list::-webkit-scrollbar-thumb:hover {
+    background: #ec256eEE;
+  }
 

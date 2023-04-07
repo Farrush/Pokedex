@@ -16,10 +16,10 @@ export const store = createStore<Estado>({
             tipo: "x",
             habilidade1: "x",
             habilidade2: "x",
-            hp: 2,
-            atq: 3,
-            def: 5,
-            vel: 1,
+            hp: 0,
+            atq: 0,
+            def: 0,
+            vel: 0,
             img: ""
         },
         lista: [

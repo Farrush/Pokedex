@@ -1,8 +1,6 @@
-
-:root {
- 
+body{
+  overflow-y: hidden;
 }
-
 *,
 *::before,
 *::after {

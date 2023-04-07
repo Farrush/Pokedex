@@ -41,9 +41,10 @@ export default defineComponent({
     box-shadow:rgba(100,100,111,0.2) 0px 7px 29px 0px;
     min-height:70px;
     color: #fefefe;
+    width: 210px;
 }
 .pokemon img{
-    width:29%;
+    width:33%;
     border-radius:50%;
 }
 .pokemon:hover{

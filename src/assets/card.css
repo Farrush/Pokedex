@@ -4,7 +4,7 @@
 }
 
 .pokemon-card .card-top{
-    padding:30px 40px 0px;
+    padding:20px 40px 0px;
 }
 .pokemon-card .name{
     margin-bottom: 5px;
@@ -20,7 +20,7 @@
     height: fit-content;
 }
 .pokemon-card .type{
-    font-size: 12px;
+    font-size: 15px;
     opacity: 0.8;
     background-color: #FEFEFE;
     border-radius: 10px;
@@ -73,7 +73,6 @@
     border-bottom: 1px solid #c3c4c5;
     padding: 0px 0px 5px;
     margin-bottom: 5px;
-
     font-size: 15px;
 }
 ul li{
@@ -102,4 +101,16 @@ ul{
 }
 .normal-type{
     background-color: #9b9a9f;
+}
+.rock-type{
+    background-color: #927f5c;
+}
+.flying-type{
+    background-color: #8bb7e1;
+}
+.fighting-type{
+    background-color: #763535;
+}
+.dark-type{
+    background-color: #403c47;
 }
