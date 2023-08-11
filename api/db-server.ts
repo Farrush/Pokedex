@@ -2,7 +2,6 @@ import type IListaPoke from '../src/interfaces/IListaPoke'
 import type IPokemon from '../src/interfaces/IPokemon'
 import express, { type Request, type Response } from 'express'
 import sqlite3 from 'sqlite3'
-import { formToJSON } from 'axios'
 
 const app = express()
 const sqlite = sqlite3.verbose()
@@ -45,22 +44,6 @@ app.get('/nav-list', (req: Request, res: Response) => {
       
         }
     })
-})
-
-app.post('/pokemon/add', (req: Request, res: Response) =>{
-/*
-    const db = new sqlite.Database('./db/poke.db', sqlite.OPEN_READWRITE, (err) => {
-        if (err) {
-
-            console.log('Failed to connect: ' + err)
-        }
-    })
-    db.run(`insert codigo, nome, tipo, habilidade1, habilidade2, hp,
-     atq, def, vel, img, icon`,[req.body._value], (err)=>console.log(err))
-    db.close()
-*/
-console.log(req.body.code._value)
-    res.send()
 })
 
 app.get('/pokemon/:slug', (req: Request, res: Response) => {
