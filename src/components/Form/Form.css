@@ -1,0 +1,39 @@
+.form{
+    padding: 20px;
+    width:50vw;
+    margin-top: 10px;
+    border-radius: 30px;
+    background-color: #ededed;
+}
+.form h1{
+    text-align: center;
+}
+.form .input-field{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.form .input-field label{
+    text-align: center;
+}
+.form .input-field input, .input-field select{
+    margin: 10px 5px;
+    padding: 5px 3px;
+}
+.input-field select{
+    width: 40%;
+    align-self: center;
+}
+.input-field .stats{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width:75%;
+    align-self: center;
+}
+.input-field h2{
+    text-align: center;
+}
+.stats input{
+    width: 17%;
+}

@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Card from './components/Card';
 import NavItem from './components/Navigation-item'
+import Form from './components/Form';
 
 function App() {
   const [pokemons,setPokemons] = useState([{
@@ -115,39 +116,50 @@ function App() {
     setPokemon(active);
   }, [pokemons]);
 
+  //Troca de pokemon exibido no card principal
   function setActivePokemon(code){
     
     const novoArray = pokemons.map(pokemon => {
       return({
         ...pokemon,
-        active: pokemon.code === code? !pokemon.active : false
+        active: pokemon.code === code? true : false
       })
     })
 
     setPokemons(novoArray)
   }
-  
+  function addPokemon(obj){
+    //console.log(obj)
+    if(pokemons.filter(poke => poke.code === obj.code).length < 1 || pokemons.filter(poke => poke.name === obj.name).length < 1){
+      setPokemons([...pokemons,obj])
+    }
+  }
 
   return (
     <div className="App">
-      <Card
-        pokemon={pokemon}
-      />
-      <nav className="listagem">
-        <ul>
-          {pokemons.map(poke => {
-            return(
-            <NavItem
-              key={poke.code}
-              name={poke.name}
-              icon={poke.image}
-              active={poke.active}
-              code={poke.code}
-              clicked={code => setActivePokemon(code)}
-            />)
-          })}
-        </ul>
-      </nav>
+      <div className='pokedex'>
+        <Card
+          pokemon={pokemon}
+        />
+        <nav className="listagem">
+          <ul>
+            {pokemons.map(poke => {
+              return(
+              <NavItem
+                key={poke.code}
+                name={poke.name}
+                icon={poke.image}
+                active={poke.active}
+                code={poke.code}
+                clicked={code => setActivePokemon(code)}
+              />)
+            })}
+          </ul>
+        </nav>
+      </div>
+      <Form
+        sendPokemon={obj => addPokemon(obj)}
+        />
     </div>
   );
 }
